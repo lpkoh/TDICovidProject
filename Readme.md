@@ -5,3 +5,7 @@ With the lack of vaccine/effective treatment + the limited medical resources, it
 The inputs to a predictive model for the level of social distancing on a US county level will grow over time, but the current ideas involve Twitter data on a county level as well as socio-economic data on a US county level.
 
 ## 1st Asset: Inputs to the model: Twitter and socio-economic data
+We crawl for county level data using the GetOldTweets3 library.
+```python
+import GetOldTweets3 as got
+```
