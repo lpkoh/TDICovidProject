@@ -88,4 +88,4 @@ The key output we want is the effectiveness of social distancing in a city. The 
 ### Google Mobility Report
 The first is Google's mobility report, which releases the percentage change on a day by day basis of social movement. A negative percentage would mean less socializing and hence greater social distancing, for example. The data is available from February till now.
 What the report looks like:
-![GitHub Logo](/images/report-screenshot.png)
+![GitHub Logo](/Images/report-screenshot.png)
