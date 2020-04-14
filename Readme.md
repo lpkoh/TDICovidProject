@@ -59,3 +59,4 @@ We are working hard to mobilize the #vote amid the #coronavirus pandemic. Watch 
 Scott Gottlieb: Coronavirus Would Have Been ‘Far More Deadly than Spanish Flu’ If It Appeared in 1918 https://www.nationalreview.com/news/scott-gottlieb-coronavirus-would-have-been-far-more-deadly-than-spanish-flu-if-it-appeared-in-1918/. What a stupid article. in 1918 people were much younger and healthy. How would he draw such a dumb conclusion?
 
 Fact check false. Trump never called Corona virus a hoax.
+
