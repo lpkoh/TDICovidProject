@@ -89,3 +89,9 @@ The key output we want is the effectiveness of social distancing in a city. The 
 The first is Google's mobility report, which releases the percentage change on a day by day basis of social movement. A negative percentage would mean less socializing and hence greater social distancing, for example. The data is available from February till now.
 What the report looks like:
 ![GitHub Logo](/Images/report-screenshot.png)
+There are pdfs for each US state, with breakdowns for mobility data into the county level. However, it is all in pdf and not csv format. I use an existing data extraction tool found at https://github.com/vitorbaptista/google-covid19-mobility-reports to extract the pdfs into csvs, and the tool also comes with checks to make sure that the data is extracted properly. An example dataframe is in Datasets. Here is an example row from the dataframe:
+region	subregion	      updated_at	retail_and_recreation	grocery_and_pharmacy	parks	transit_stations	workplaces	residential	
+Alabama	Autauga County	2020-03-29	        -0.42	                 -0.08	      -0.14	          NaN	        -0.35	      0.16
+This shows the change on 03 Mar for Alabama's Autauga County in terms of social mobility across the different kinds of locations. If there is insufficient data, NaN is given instead.
+
+Another possible site to scrape from is https://www.cuebiq.com/visitation-insights-covid19/. Cuebiq is a startup that is providing weekly, county level data of social mobility in the USA.
