@@ -18,9 +18,8 @@ for tweet in tweets:
     print(tweet.text)
     print('\n')
 ```
-```python
 Output:
-
+```
 'TELL IT LIKE IT IS' Talk Show: Trump’s Faulty Malaria-Coronavirus Connection https://talktoalabama.tellitlikeitistalkshow.com/2020/04/trumps-faulty-malaria-coronavirus.html?spref=tw
 
 Partying... in the time of Coronavirus? If someone has a birthday coming up, then you can celebrate virtually! There are lots of ways to maintain physical distance while staying socially connected. #mgmready #montgomeryready
