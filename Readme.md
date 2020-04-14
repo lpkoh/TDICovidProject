@@ -1,12 +1,12 @@
 # The Data Incubator
-## Problem Statement:
-With the lack of vaccine/effective treatment + the limited medical resources, it is critical that the spread of coronavirus be contained by social distancing. However, social distancing has been implemented with mixed effectiveness in different areas. This project aims to predict the degree to which social distancing is effectively practiced on the US city level. The usefulness of this is apparent in understanding what stops the effective practice of social distancing, where this is occuring, and how we can better support social distancing as well as identify future clusters to better prepare.
+## Problem Statement: Predict ahead of time how effectively US cities practice social distancing
+With the lack of vaccine/effective treatment + the limited medical resources, it is critical that the spread of coronavirus be contained by social distancing. However, social distancing has been implemented with mixed effectiveness in different areas. This project aims to predict the degree to which social distancing is effectively practiced on the US city level. The usefulness of this is apparent in understanding what stops the effective practice of social distancing, where this is occuring, and how we can better support social distancing as well as identify future areas to better prepare.
 
-The inputs to a predictive model for the level of social distancing on a US county level will grow over time, but the current ideas involve Twitter data on a county level as well as socio-economic data on a US county level.
+The inputs to a predictive model for the level of social distancing on a US county level will change as the project evolves, but the current ideas involve Twitter data on a city level, socio-economic data on a US county level, and coronavirus case counts on a county level. Predictions will be made in time series blocks (e.g. twitter and census data for Mar 2020 predicts social distancing effectiveness for Apr 2020).
 
 ## 1st Asset: Inputs to the model (Twitter and socio-economic data)
-### Twitter
-We need a way to obtain tweets during particular times and at the city level in the USA. We crawl for county level data using the GetOldTweets3 library. We install the library, import it, and can set criteria such as what query we want, the date, the location, and the maximum number of tweets we are looking for.
+### Twitter city level data
+We need a way to obtain tweets during particular times and at the city level in the USA. We crawl for city level data using the GetOldTweets3 library. We install the library, import it, and can set criteria such as what query we want, the date, the location, and the maximum number of tweets we are looking for.
 ```python
 import GetOldTweets3 as got
 tweetCriteria = got.manager.TweetCriteria().setQuerySearch('coronavirus')\
@@ -62,3 +62,12 @@ Scott Gottlieb: Coronavirus Would Have Been â€˜Far More Deadly than Spanish Fluâ
 Fact check false. Trump never called Corona virus a hoax.
 ```
 As can be seen, the scraper works, as the tweets are city specific.
+
+### US city level demographic data
+We use the US census dataset "County Population by Characteristics: 2010-2018" to obtain demographic features, "Local Area Personal Income, 2018" to obtain income features, "Unemployment, and Median Household Income" to obtain unemployment data, and "Education" to obtain Education data. This is on county level, but we will map each county to the county seat to make the data city level. This is also a baseline, we can consider more datasets in the future.
+
+The datasets can be found under "DemograhicData" folder.
+
+### Case data 
+
+### Approach to working with inpu
