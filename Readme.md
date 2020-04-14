@@ -4,7 +4,8 @@ With the lack of vaccine/effective treatment + the limited medical resources, it
 
 The inputs to a predictive model for the level of social distancing on a US county level will grow over time, but the current ideas involve Twitter data on a county level as well as socio-economic data on a US county level.
 
-## 1st Asset: Inputs to the model: Twitter and socio-economic data
+## 1st Asset: Inputs to the model (Twitter and socio-economic data)
+### Twitter
 We need a way to obtain tweets during particular times and at the city level in the USA. We crawl for county level data using the GetOldTweets3 library. We install the library, import it, and can set criteria such as what query we want, the date, the location, and the maximum number of tweets we are looking for.
 ```python
 import GetOldTweets3 as got
