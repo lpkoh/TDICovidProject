@@ -66,8 +66,26 @@ As can be seen, the scraper works, as the tweets are city specific.
 ### US city level demographic data
 We use the US census dataset "County Population by Characteristics: 2010-2018" to obtain demographic features, "Local Area Personal Income, 2018" to obtain income features, "Unemployment, and Median Household Income" to obtain unemployment data, and "Education" to obtain Education data. This is on county level, but we will map each county to the county seat to make the data city level. This is also a baseline, we can consider more datasets in the future.
 
-The datasets can be found under "DemograhicData" folder.
+The datasets can be found under "Datasets" folder.
 
-### Case data 
+### Case data
+County level coronavirus data can be found on: https://github.com/nytimes/covid-19-data. Dataset is found in "Datasets" folder.
 
-### Approach to working with inpu
+### Approach to working with input data
+The taks is to go from features during time t-k to a prediction of social distancing effectiveness at time t.
+
+For structured data, such as case data and demographic data, the data processing is fairly straightforward. We process the already rather clean datasets and create features such as ratios (going from total population and total population over 60 to perentage of population over 60).
+
+For Twitter data, the data is potentially richer but also more difficult to work with. Twitter data is noisy and it is difficult to understand what exact aspect of twitter data could help in predicting the effectiveness of social distancing. We take the broad approach like this:
+Use standard NLP feature extraction techniques (e.g. sentiment analysis) to generate city level features. Use simple ANOVA techniques over k time steps to see if t-k time feature has predictive power on t time social distancing effectiveness, with p-value correction.
+Split cities by social distancing effectiveness and use unsupervised learning techniques to learn if there is any difference in Twitter behaviors between places that are effectively/not effectively social distancing.
+
+At the end, all promising features with the appropriate time steps will be used in predictive model.
+
+## 2nd Asset: Output (Social distancing effectiveness measure for cities)
+The key output we want is the effectiveness of social distancing in a city. The data is available from two sources.
+
+### Google Mobility Report
+The first is Google's mobility report, which releases the percentage change on a day by day basis of social movement. A negative percentage would mean less socializing and hence greater social distancing, for example. The data is available from February till now.
+What the report looks like:
+![GitHub Logo](/images/89830452_138197107721093_3195444993594625119_n.jpg)
